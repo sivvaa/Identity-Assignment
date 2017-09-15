@@ -1,6 +1,6 @@
 Feature: Verify the vehicle details.
 
-  Scenario Outline: Validate vehicle details
+  Scenario Outline: Read the vehicle data from Excel sheet and verify the details in the gov.uk site.
     Given A "<CSV File>" with vehicle details
     And The Vehicle Information Page is running
     When I click on Start now button

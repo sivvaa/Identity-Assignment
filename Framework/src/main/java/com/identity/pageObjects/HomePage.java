@@ -1,16 +1,15 @@
 package com.identity.pageObjects;
 
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+/**
+ * Page object representing the page - https://www.gov.uk/get-vehicle-information-from-dvla
+ */
 public class HomePage extends Page {
 
     public static final String HOMEPAGE_URL = "https://www.gov.uk/get-vehicle-information-from-dvla";
-
-    @FindBy(linkText = "Start now")
-    private WebElement startNow;
+    private static final String START_NOW_BUTTON_XPATH = "//a[@data-transaction-slug = 'get-vehicle-information-from-dvla']";
 
     public void init() {
         getDriver().get(HOMEPAGE_URL);
@@ -18,7 +17,7 @@ public class HomePage extends Page {
     }
 
     public VehicleEnquiryPage goToVehicleEnquiryPage() {
-        startNow.click();
+        getElementByXpath(START_NOW_BUTTON_XPATH).click();
         return PageFactory.initElements(driver, VehicleEnquiryPage.class);
     }
 }

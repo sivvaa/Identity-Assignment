@@ -1,5 +1,8 @@
 package com.identity.model;
 
+/**
+ * Model for file metadata
+ */
 public class FileInfo {
 
     private String fileName;

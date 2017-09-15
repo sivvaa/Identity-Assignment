@@ -1,5 +1,8 @@
 package com.identity.model;
 
+/**
+ * Model to hold the details of the vehicle from CSV / Excel sheet
+ */
 public class Vehicle {
 
     private String registrationNumber;

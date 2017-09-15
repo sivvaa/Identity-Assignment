@@ -5,11 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+/**
+ * * Page object representing the page - https://vehicleenquiry.service.gov.uk/ViewVehicle
+ */
 public class VehicleEnquiryPage extends Page {
 
     public static final String PAGE_HEADER = "Enter the registration number of the vehicle";
 
-    @FindBy(linkText = "Vrm")
+    @FindBy(id = "Vrm")
     private WebElement vehicleRegistrationNumber;
 
     @FindBy(xpath = "//button[@type = 'submit']")
@@ -18,6 +21,7 @@ public class VehicleEnquiryPage extends Page {
     public boolean verifyPageHeader() {
         return getPageHeader().equalsIgnoreCase(PAGE_HEADER);
     }
+
     public void enterRegistrationNumber(String registrationNumber) {
         vehicleRegistrationNumber.sendKeys(registrationNumber);
     }
