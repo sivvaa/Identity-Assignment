@@ -30,6 +30,9 @@
 * The basic reports will be published in the location `Identity_E2E/Framework/target/cucumber`. 
 * Alternatively, the project can be executed from IDE.
 
+# Screenshot of Test run and Results
+![ScreenShot](https://github.com/sivvaa/Identity-Assignment/blob/master/TestResults.png)
+
 `NOTE – The framework now works only for one record in Excel / CSV sheet.`
 
 # What is NOT implemented
