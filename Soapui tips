@@ -35,7 +35,7 @@ testStep.testRequest.response.getResponseHeaders()['#status#'].toString()
 
 Add request headers
 ===================
-testRunner.testCase.getTestStepByName("OB-Request").testRequest.setRequestHeaders(<StringToStrinsMAP>)
+testRunner.testCase.getTestStepByName("OB-Request").testRequest.setRequestHeaders(<StringToStringsMAP>)
 
 Set post payload
 ================
@@ -44,3 +44,65 @@ testStep.setPropertyValue('Request', <REQUEST_JSON_PAULOAD>);
 Set enspoint
 ============
 testStep.setPropertyValue("endpoint", <URL>)
+
+Time in Millis
+==============
+System.currentTimeMillis()
+
+Get Request and Response Headers
+================================
+def testStepRequest = testCase.testSteps['TEST_STEP_NAME'].testRequest
+def requestHeaders = testStepRequest.getRequestHeaders()
+def responseHeaders = testStepRequest.response.responseHeaders
+
+Add Assertion
+============
+testStep.addAssertion("Valid HTTP Status Codes")
+
+Read Request
+===========
+new String(testStep.testRequest.messageExchange.rawRequestData)
+
+Read Response
+=============
+new String(testStep.testRequest.messageExchange.rawResponseData)
+
+Schema validation
+=================
+ public boolean validateResponseWithSchema(String yamlFile, String endpoint, String httpMethod, String responseCode, String responseJson) {
+        try {
+            def factory = JsonSchemaFactory.byDefault();
+            def yaml = new Yaml();
+            JSONObject jsonObject = new JSONObject(yaml.load(new FileReader(yamlFile)));
+            ObjectMapper mapper = new ObjectMapper();
+            def rootNode = mapper.readTree(jsonObject.toString());
+
+
+            def schemaNode = rootNode.path("paths").path(endpoint).path(httpMethod).path("responses").path(responseCode).path("schema");
+            def responseSchema = factory.getJsonSchema(schemaNode);
+            return responseSchema.validInstance(mapper.readTree(responseJson));
+        } catch(Exception e){
+            e.printStackTrace()
+            return false
+        }
+    }
+    
+
+Data - Groovy bean
+==================
+class Data {
+    String testId;
+    String requestMethod;
+    String endpoint;
+    String requestPayload;
+    String expectedResponsePayload;
+    String resourceId;
+    String headers;
+    String expectedResponseCode;
+
+    String toString() {
+        "[Test Data => testId: '${testId}', endpoint: '${endpoint}', requestMethod: '${requestMethod}', requestPayload: '${requestPayload}', expectedResponsePayload: '${expectedResponsePayload}', resourceId: '${resourceId}', headers: '${headers}', expectedResponseCode: '${expectedResponseCode}']"
+    }
+}
+
+
