@@ -24,3 +24,23 @@ To change a REST request method
 ===============================
 def restMethod = testStep.getRestMethod()
 restMethod.setMethod(RestRequestInterface.HttpMethod.valueOf("POST"))
+
+Running a test step
+===================
+def testStepResult = testStep.run(testRunner, context)
+
+Get response code
+=================
+testStep.testRequest.response.getResponseHeaders()['#status#'].toString()
+
+Add request headers
+===================
+testRunner.testCase.getTestStepByName("OB-Request").testRequest.setRequestHeaders(<StringToStrinsMAP>)
+
+Set post payload
+================
+testStep.setPropertyValue('Request', <REQUEST_JSON_PAULOAD>);
+
+Set enspoint
+============
+testStep.setPropertyValue("endpoint", <URL>)
