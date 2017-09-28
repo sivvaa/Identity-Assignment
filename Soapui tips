@@ -141,3 +141,16 @@ class MyTestListener extends TestRunListenerAdapter {}
 <tns:listener id="testListener" listenerClass="MyTestListener" listenerInterface="com.eviware.soapui.model.testsuite.TestRunListener" />   
 <tns:listener id="projectListener" listenerClass="MyProjectListener" listenerInterface="com.eviware.soapui.model.project.ProjectListener" />        
 </tns:soapui-listeners>
+
+Mocks - project / services level
+================================
+onRequest - def path = mockRequest.getPath().split('/').last()//path.substring(path.lastIndexOf("/")+1)
+
+Mocks - at the endpoint / stub level
+====================================
+def requestArray = Arrays.asList(mockRequest.getPath().split("/"))
+def accountId = requestArray.get(requestArray.size()-2)
+
+if(Arrays.asList("200", "400", "401", "403", "404", "500", "503", "504").contains(accountId)) 
+return "Response "+accountId
+else return "Invalid Response"
