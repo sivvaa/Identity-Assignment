@@ -1,0 +1,26 @@
+
+project path
+=============
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def projectPath = groovyUtils.projectPath
+
+Testcase
+========
+def testcase = context.testcase  / context.getTestcase()
+
+Teststep
+========
+def testStep= context.testCase.testSteps['TEST_STEP_LABEL'] / context.testCase.getTeststepByName('NAME')
+
+Set property value
+=================
+testStep.setPropertyValue(<PROPERTY>, <VALUE>)
+
+Config at project level
+=======================
+${#Project#Endpoint}  -> endpoint property at project
+
+To change a REST request method
+===============================
+def restMethod = testStep.getRestMethod()
+restMethod.setMethod(RestRequestInterface.HttpMethod.valueOf("POST"))
