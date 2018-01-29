@@ -1,0 +1,17 @@
+2018-01-28 20:59:40,702 INFO  [SoapUI] Adding [C:\MyFolder\Eclipse_workspace\ApiDemo\ext\Framework-1.0-SNAPSHOT.jar] to extensions classpath
+2018-01-28 20:59:40,703 INFO  [SoapUI] Adding [C:\MyFolder\Eclipse_workspace\ApiDemo\ext\groovy-all-2.4.12.jar] to extensions classpath
+2018-01-28 20:59:40,703 INFO  [SoapUI] Adding [C:\MyFolder\Eclipse_workspace\ApiDemo\ext\guava-18.0.jar] to extensions classpath
+2018-01-28 20:59:40,703 INFO  [SoapUI] Adding [C:\MyFolder\Eclipse_workspace\ApiDemo\ext\snakeyaml-1.16.jar] to extensions classpath
+2018-01-28 20:59:41,314 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\siva\soapui-settings.xml]
+2018-01-28 20:59:45,003 INFO  [PluginManager] 0 plugins loaded in 46 ms
+2018-01-28 20:59:45,005 INFO  [DefaultSoapUICore] All plugins loaded
+2018-01-28 20:59:47,715 INFO  [WsdlProject] Loaded project from [file:/C:/MyFolder/SoapUi/Demo-soapui-project.xml]
+2018-01-28 20:59:47,760 INFO  [SoapUITestCaseRunner] Running SoapUI tests in project [Demo]
+2018-01-28 20:59:47,762 INFO  [SoapUITestCaseRunner] Running Project [Demo], runType = SEQUENTIAL
+2018-01-28 20:59:47,829 INFO  [SoapUITestCaseRunner] Running SoapUI testcase [TestCase 1]
+2018-01-28 20:59:47,859 INFO  [SoapUITestCaseRunner] running step [Groovy Script]
+2018-01-28 20:59:48,565 INFO  [log] #############################################
+2018-01-28 20:59:48,743 INFO  [log] {daf01={url1=url1, url2=url2}, daf02={temp1=temp1, temp2=temp2}}
+2018-01-28 20:59:48,744 INFO  [log] #############################################
+2018-01-28 20:59:48,790 INFO  [SoapUITestCaseRunner] Finished running SoapUI testcase [TestCase 1], time taken: 866ms, status: FINISHED
+2018-01-28 20:59:48,817 INFO  [SoapUITestCaseRunner] Project [Demo] finished with status [FINISHED] in 1022ms
